@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v4.25.3
-// source: auth/auth.proto
+// source: sso/sso.proto
 
-package auth
+package sso
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -381,20 +381,20 @@ func file_auth_auth_proto_rawDescGZIP() []byte {
 
 var file_auth_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_auth_auth_proto_goTypes = []interface{}{
-	(*RegisterRequest)(nil),  // 0: auth.RegisterRequest
-	(*RegisterResponse)(nil), // 1: auth.RegisterResponse
-	(*LoginRequest)(nil),     // 2: auth.LoginRequest
-	(*LoginResponse)(nil),    // 3: auth.LoginResponse
-	(*IsAdminRequest)(nil),   // 4: auth.IsAdminRequest
-	(*IsAdminResponse)(nil),  // 5: auth.IsAdminResponse
+	(*RegisterRequest)(nil),  // 0: sso.RegisterRequest
+	(*RegisterResponse)(nil), // 1: sso.RegisterResponse
+	(*LoginRequest)(nil),     // 2: sso.LoginRequest
+	(*LoginResponse)(nil),    // 3: sso.LoginResponse
+	(*IsAdminRequest)(nil),   // 4: sso.IsAdminRequest
+	(*IsAdminResponse)(nil),  // 5: sso.IsAdminResponse
 }
 var file_auth_auth_proto_depIdxs = []int32{
-	0, // 0: auth.Auth.Register:input_type -> auth.RegisterRequest
-	2, // 1: auth.Auth.Login:input_type -> auth.LoginRequest
-	4, // 2: auth.Auth.IsAdmin:input_type -> auth.IsAdminRequest
-	1, // 3: auth.Auth.Register:output_type -> auth.RegisterResponse
-	3, // 4: auth.Auth.Login:output_type -> auth.LoginResponse
-	5, // 5: auth.Auth.IsAdmin:output_type -> auth.IsAdminResponse
+	0, // 0: sso.Auth.Register:input_type -> sso.RegisterRequest
+	2, // 1: sso.Auth.Login:input_type -> sso.LoginRequest
+	4, // 2: sso.Auth.IsAdmin:input_type -> sso.IsAdminRequest
+	1, // 3: sso.Auth.Register:output_type -> sso.RegisterResponse
+	3, // 4: sso.Auth.Login:output_type -> sso.LoginResponse
+	5, // 5: sso.Auth.IsAdmin:output_type -> sso.IsAdminResponse
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
