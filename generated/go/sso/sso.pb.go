@@ -389,12 +389,12 @@ var file_auth_auth_proto_goTypes = []interface{}{
 	(*IsAdminResponse)(nil),  // 5: sso.IsAdminResponse
 }
 var file_auth_auth_proto_depIdxs = []int32{
-	0, // 0: sso.Auth.Register:input_type -> sso.RegisterRequest
-	2, // 1: sso.Auth.Login:input_type -> sso.LoginRequest
-	4, // 2: sso.Auth.IsAdmin:input_type -> sso.IsAdminRequest
-	1, // 3: sso.Auth.Register:output_type -> sso.RegisterResponse
-	3, // 4: sso.Auth.Login:output_type -> sso.LoginResponse
-	5, // 5: sso.Auth.IsAdmin:output_type -> sso.IsAdminResponse
+	0, // 0: sso.Handler.Register:input_type -> sso.RegisterRequest
+	2, // 1: sso.Handler.Login:input_type -> sso.LoginRequest
+	4, // 2: sso.Handler.IsAdmin:input_type -> sso.IsAdminRequest
+	1, // 3: sso.Handler.Register:output_type -> sso.RegisterResponse
+	3, // 4: sso.Handler.Login:output_type -> sso.LoginResponse
+	5, // 5: sso.Handler.IsAdmin:output_type -> sso.IsAdminResponse
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
