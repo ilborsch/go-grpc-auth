@@ -17,7 +17,7 @@ type App struct {
 
 func New(log *slog.Logger, grpcPort int, storagePath string, tokenTTL time.Duration) *App {
 	gRPCServer := grpc.NewServer()
-	authgrpc.RegisterServer(gRPCServer)
+	authgrpc.RegisterServer(gRPCServer, log, tokenTTL)
 	return &App{
 		log:        log,
 		port:       grpcPort,
@@ -42,6 +42,7 @@ func (app *App) MustRun() {
 	if err := app.runServer(); err != nil {
 		panic("App.MustRun error: " + err.Error())
 	}
+
 }
 
 func (app *App) Stop() {

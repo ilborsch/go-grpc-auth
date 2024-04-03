@@ -5,7 +5,7 @@ import (
 )
 
 type User struct {
-	ID             int
+	ID             int64
 	Email          string
 	PasswordHashed []byte
 }
@@ -15,7 +15,7 @@ type UserSaver interface {
 		ctx context.Context,
 		email string,
 		passwordHash []byte,
-	) (uid int64, err error)
+	) (int64, error)
 }
 
 type UserProvider interface {

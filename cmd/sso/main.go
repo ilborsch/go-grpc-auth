@@ -10,19 +10,19 @@ import (
 	"syscall"
 )
 
+// TODO: wrap errors in internal/storage/sqlite so errors give more information to users
+// TODO: write tests :)
 func main() {
 	// init config object
 	cfg := config.MustLoad()
 
 	// init logger object
 	log := logger.SetupLogger(cfg.Env)
-	log.Info("starting application", slog.Any("cfg", cfg))
+	log.Info("starting application")
 
-	// init app
+	// init app and start server
 	application := app.New(log, cfg.GRPC.Port, cfg.StoragePath, cfg.GRPC.Timeout)
 	go application.MustRun()
-
-	// TODO: start gRPC server
 
 	// Graceful stop
 	stopApp(application, log)
