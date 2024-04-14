@@ -3,10 +3,12 @@ package storage
 import (
 	"database/sql"
 	_ "github.com/mattn/go-sqlite3"
+	"sync"
 )
 
 type Storage struct {
 	db *sql.DB
+	mu sync.Mutex
 }
 
 const (

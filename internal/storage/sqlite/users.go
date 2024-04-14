@@ -24,6 +24,8 @@ func (s *Storage) User(ctx context.Context, email string) (models.User, error) {
 
 func (s *Storage) SaveUser(ctx context.Context, email string, passwordHash []byte) (int64, error) {
 	const query = `INSERT INTO users(email, password_hash) VALUES(?, ?)`
+	s.mu.Lock()
+	defer s.mu.Unlock()
 	stmt, err := s.db.Prepare(query)
 	if err != nil {
 		return 0, err
