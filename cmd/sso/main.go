@@ -10,8 +10,6 @@ import (
 	"syscall"
 )
 
-// TODO: wrap errors in internal/storage/sqlite so errors give more information to users
-// TODO: write tests :)
 func main() {
 	// init config object
 	cfg := config.MustLoad()

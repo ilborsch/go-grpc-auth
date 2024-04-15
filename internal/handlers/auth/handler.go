@@ -75,10 +75,10 @@ func (h *Handler) IsAdmin(ctx context.Context, userID int64) (bool, error) {
 		slog.Int("uID", int(userID)),
 	)
 	log.Info("getting user permissions")
-	isAdmin, err := h.IsAdmin(ctx, userID)
+	isAdmin, err := h.UserProvider.IsAdmin(ctx, userID)
 	if err != nil {
 		log.Error("error retrieving user permissions " + err.Error())
-		return false, status.Error(codes.Internal, "internal error")
+		return false, status.Error(codes.Internal, "non-existing user_id")
 	}
 	return isAdmin, nil
 }

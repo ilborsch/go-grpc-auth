@@ -36,5 +36,8 @@ func validateIsAdmin(req *ssov1.IsAdminRequest) error {
 	if req.GetUserId() == 0 {
 		return status.Error(codes.InvalidArgument, "user id is required")
 	}
+	if req.GetUserId() < 0 {
+		return status.Error(codes.InvalidArgument, "user id cannot be negative")
+	}
 	return nil
 }
