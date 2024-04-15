@@ -14,7 +14,7 @@ func validateLogin(req *ssov1.LoginRequest) error {
 		return status.Error(codes.InvalidArgument, "password is required")
 	}
 	if req.GetAppId() == 0 {
-		return status.Error(codes.InvalidArgument, "app id is required")
+		return status.Error(codes.InvalidArgument, "app_id is required")
 	}
 	return nil
 }
@@ -25,6 +25,9 @@ func validateRegister(req *ssov1.RegisterRequest) error {
 	}
 	if req.GetPassword() == "" {
 		return status.Error(codes.InvalidArgument, "password is required")
+	}
+	if len(req.GetPassword()) < 8 {
+		return status.Error(codes.InvalidArgument, "password is too small")
 	}
 	return nil
 }

@@ -30,7 +30,7 @@ func (h *Handler) Login(ctx context.Context, email, password string, appID int64
 	user, err := h.UserProvider.User(ctx, email)
 	if err != nil {
 		log.Error("error retrieving user from storage " + err.Error())
-		return "", status.Error(codes.Internal, "internal error")
+		return "", status.Error(codes.InvalidArgument, "invalid email or password")
 	}
 	if err := bcrypt.CompareHashAndPassword(user.PasswordHashed, []byte(password)); err != nil {
 		log.Error("password and hashed passwords don't match " + err.Error())
@@ -39,7 +39,7 @@ func (h *Handler) Login(ctx context.Context, email, password string, appID int64
 	app, err := h.AppProvider.App(ctx, appID)
 	if err != nil {
 		log.Error("error retrieving app from storage " + err.Error())
-		return "", status.Error(codes.Internal, "internal error")
+		return "", status.Error(codes.InvalidArgument, "invalid app_id")
 	}
 	token, err := tkn.NewToken(user, app, h.tokenTTL)
 	if err != nil {
