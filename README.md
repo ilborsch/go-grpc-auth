@@ -31,11 +31,17 @@ Install Go dependencies
   go get
 ```
 
-Start the server
+Start the server manually
 
 ```bash
    go run ./cmd/sso/main.go --config=./config/local.yaml
 ```
+
+Or start the server using make
+```bash
+   make run_local
+```
+
 
 
 
