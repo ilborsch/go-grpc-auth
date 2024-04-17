@@ -6,10 +6,10 @@ Welcome to GoSSO, a highly efficient and scalable Single Sign-On (SSO) microserv
 
 <p align="center">
     <img style="width: 200px;" src="https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png" alt="logo">
-    <img style="margin-left: 60px; width: 160px;" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xZXmBNa-o0P5YYsKmsKO0Q.png" alt="logo">
+    <img style="width: 160px;" src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xZXmBNa-o0P5YYsKmsKO0Q.png" alt="logo">
 </p>
 
-**Note**: The project is created exclusively in educational purposes so will not be maintained properly. I don't plan to make further updates.
+**Note**: The project is created exclusively in educational purposes so will not be maintained properly. I don't plan on making further updates.
 
 ## Run Locally
 
